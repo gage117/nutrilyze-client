@@ -1,0 +1,9 @@
+.nutrition-input {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.our-nutrition {
+  display: flex;
+  flex-wrap: wrap;
+}

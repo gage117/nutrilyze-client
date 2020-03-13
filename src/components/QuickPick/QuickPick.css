@@ -1,0 +1,63 @@
+.quick-pick {
+  width: 250px;
+  min-height: 415px;
+  border: 1px solid rgb(93, 84, 84);
+  margin: 0px 0px 10px 10px;
+}
+
+.meals-header {
+  background-color: #AAA;
+  border-bottom: 1px solid black;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.qp-h3 {
+  margin: 0;
+}
+
+.ingredients-header {
+  border-top: 1px solid black;
+  background-color: #AAA;
+  border-bottom: 1px solid black;
+  padding: 5px;
+}
+
+.list-div {
+  border-bottom: 1px solid #AAA;
+}
+
+.list-div > span {
+  display: inline-block;
+  padding: 2.5px 0px 2.5px 5px;
+  margin: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.serving-input {
+  width: 40px;
+}
+
+.expand-div {
+  background-color: #EEE;
+  padding: 5px;
+}
+
+.ingredients-list {
+  background-color: #EEE;
+}
+
+.ingredients-list > p {
+  margin: 0px;
+  padding: 0px 15px;
+  font-weight: bold;
+}
+
+.ingredients-list > span {
+  padding: 2.5px 0px 2.5px 25px;
+  font-size: 16px;
+}

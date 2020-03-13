@@ -1,0 +1,28 @@
+#landing-page {
+  color: #444;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.lp-header {
+  padding: 15px 15px;
+}
+
+.lp-section {
+  min-height: 200px;
+  padding: 30px 15px;
+  background-color: #bbb;
+}
+
+.lp-section:nth-child(even) {
+  background-color: #ddd;
+}
+
+.lp-section > p {
+  margin: 0 auto;
+  max-width: 650px;
+}
+
+.lp-section > p + p {
+  margin-top: 15px;
+}
