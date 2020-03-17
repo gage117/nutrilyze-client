@@ -1,4 +1,11 @@
 #App {
   background-color: #142850;
+  padding-top: 3.75rem;
   min-height: 100vh;
+}
+
+@media screen and (min-width: 550px) {
+  #App {
+    padding-top: 5rem;
+  }
 }

@@ -5,6 +5,7 @@ import OurNutrition from '../../components/OurNutrition/OurNutrition'
 import QuickPick from '../../components/QuickPick/QuickPick'
 import ingredientService from '../../services/ingredient-api-service'
 import authService from '../../services/auth-api-service'
+import './MainPage.css'
 
 export default class MainPage extends Component {
 
@@ -24,7 +25,7 @@ export default class MainPage extends Component {
     return (
       <React.Fragment>
         <Header />
-        <main>
+        <main id='mp__main'>
           <div className='nutrition-input'>
             <ServingForm users={this.props.props.state.users} handlers={this.props.props.handlers}/>
             <QuickPick state={this.props.props.state} handlers={this.props.props.handlers}/>

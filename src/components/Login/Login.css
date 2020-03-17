@@ -1,6 +1,7 @@
 /* Changes the App container to flex */
-#root > .Login__App-flex {
-  height: 100%;
+#Login__main-flex {
+  min-height: 42rem;
+  height: calc(100vh - 5rem);
   display: flex;
   justify-content: center;
   align-items: center;

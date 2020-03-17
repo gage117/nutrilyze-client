@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Header from '../../components/Header/Header'
 import Login from '../../components/Login/Login'
 
 export default class LoginPage extends Component {
@@ -19,6 +20,9 @@ export default class LoginPage extends Component {
   render() {
     return (
       <React.Fragment>
+        <Header 
+          path={this.props.match.path}
+        />
         <Login
           onLoginSuccess={this.handleLoginSuccess}
         />

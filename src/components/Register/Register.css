@@ -1,6 +1,7 @@
 /* Changes the App container to flex */
-#root > .Register__App-flex {
-  height: 100%;
+#Register__main-flex {
+  min-height: 47rem;
+  height: calc(100vh - 5rem);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,7 +15,7 @@
 }
 
 .Register__container > h2 {
-  margin: 3rem 0rem 4rem;
+  margin: 2rem 0rem 3rem;
   font-size: 4rem;
   text-align: center;
   color: whitesmoke;
@@ -23,7 +24,7 @@
 /* ==User Name== */
 .Register__user_name-div {
   width: 20rem;
-  margin: 2rem auto;
+  margin: 1.5rem auto;
 }
 .Register__user_name-div > label {
   display: block;
@@ -40,7 +41,7 @@
 /* ==Password== */
 .Register__password-div {
   width: 20rem;
-  margin: 2rem auto;
+  margin: 1.5rem auto;
 }
 .Register__password-div > label {
   display: block;
@@ -57,7 +58,7 @@
 /* ==Name== */
 .Register__name-div {
   width: 20rem;
-  margin: 2rem auto;
+  margin: 1rem auto;
 }
 .Register__name-div > label {
   display: block;
@@ -100,6 +101,7 @@
 .Register__or {
   margin: .5rem 0;
   font-size: 1.7rem;
+  color: whitesmoke;
 }
 
 /* ==Login Link== */

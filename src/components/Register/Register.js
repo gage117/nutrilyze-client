@@ -33,69 +33,71 @@ export default class Register extends Component {
   }
 
   componentDidMount() {
-    const element = document.getElementById('App');
-    element.classList.toggle('Register__App-flex');
+    const element = document.getElementById('Register__main-flex');
+    element.classList.toggle('Register__main-flex');
   }
 
   render() {
     const { error } = this.state
     return (
-      <section className='Register__container'>
-        <h2>Register</h2>
-        <form
-          className='Register__form'
-          onSubmit={this.handleSubmit}
-        >
-          <div role='alert'>
-            {error && <p className='Register__error'>{error}</p>}
-          </div>
-          <div className='Register__user_name-div'>
-            <label htmlFor='Register__user_name'>
-              User name 
-            </label>
-            <input
-              name='user_name'
-              type='text'
-              required
-              id='Register__user_name'>
-            </input>
-          </div>
-          <div className='Register__password-div'>
-            <label htmlFor='Register__password'>
-              Password 
-            </label>
-            <input
-              name='password'
-              type='password'
-              required
-              id='Register__password'>
-            </input>
-          </div>
-          <div className='Register__name-div'>
-            <label htmlFor='Register__name'>
-              Name
-            </label>
-            <input
-              name='name'
-              type='text'
-              required
-              id='Register__name'>
-            </input>
-          </div>
-          <div className='Register__submit-button-div'>
-            <button className='Register__submit-button' type='submit'>
-              Register
-            </button>
-            <p className='Register__or'>or</p>
-            <Link className='Register__login-link' to='/login'>login</Link>
-          </div>
-        </form>
-      </section>
+      <main id='Register__main-flex'>
+        <section className='Register__container'>
+          <h2>Register</h2>
+          <form
+            className='Register__form'
+            onSubmit={this.handleSubmit}
+          >
+            <div role='alert'>
+              {error && <p className='Register__error'>{error}</p>}
+            </div>
+            <div className='Register__user_name-div'>
+              <label htmlFor='Register__user_name'>
+                User name 
+              </label>
+              <input
+                name='user_name'
+                type='text'
+                required
+                id='Register__user_name'>
+              </input>
+            </div>
+            <div className='Register__password-div'>
+              <label htmlFor='Register__password'>
+                Password 
+              </label>
+              <input
+                name='password'
+                type='password'
+                required
+                id='Register__password'>
+              </input>
+            </div>
+            <div className='Register__name-div'>
+              <label htmlFor='Register__name'>
+                Name
+              </label>
+              <input
+                name='name'
+                type='text'
+                required
+                id='Register__name'>
+              </input>
+            </div>
+            <div className='Register__submit-button-div'>
+              <button className='Register__submit-button' type='submit'>
+                Register
+              </button>
+              <p className='Register__or'>or</p>
+              <Link className='Register__login-link' to='/login'>login</Link>
+            </div>
+          </form>
+        </section>
+      </main>
     )
   }
 
   componentWillUnmount() {
-    const element = document.getElementById('App');
-    element.classList.toggle('Register__App-flex');
+    const element = document.getElementById('Register__main-flex');
+    element.classList.toggle('Register__main-flex');
   }
 }

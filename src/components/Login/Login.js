@@ -31,58 +31,60 @@ export default class Login extends Component {
       })
   }
 
-  componentDidMount() {
-    const element = document.getElementById('App');
-    element.classList.toggle('Login__App-flex');
-  }
+  // componentDidMount() {
+  //   const element = document.getElementById('Login__main-flex');
+  //   element.classList.toggle('Login__main-flex');
+  // }
 
   render() {
     return (
-      <section className='Login__container'>
-        <h2>Login</h2>
-        <form
-          className='Login__form'
-          onSubmit={this.handleSubmitJwtAuth}
-        >
-          <div role='alert'>
-            {this.state.error && <p className='Login__error'>Something went wrong, please try again</p>}
-          </div>
-          <div className='Login__user_name-div'>
-            <label htmlFor='Login__user_name'>
-              User name
-            </label>
-            <input
-              required
-              name='user_name'
-              id='Login__user_name'>
-            </input>
-          </div>
-          <div className='Login__password-div'>
-            <label htmlFor='Login__password'>
-              Password
-            </label>
-            <input
-              required
-              name='password'
-              type='password'
-              id='Login__password'>
-            </input>
-          </div>
-          <div className='Login__submit-button-div'>
-            <button className='Login__submit-button' type='submit'>
-              Login
-            </button>
-            <p className='Login__or'>or</p>
-            <Link className='Login__register-link' to='/register'>sign up</Link>
-          </div>
-        </form>
-      </section>
+      <main id='Login__main-flex'>
+        <section className='Login__container'>
+          <h2>Login</h2>
+          <form
+            className='Login__form'
+            onSubmit={this.handleSubmitJwtAuth}
+          >
+            <div role='alert'>
+              {this.state.error && <p className='Login__error'>Something went wrong, please try again</p>}
+            </div>
+            <div className='Login__user_name-div'>
+              <label htmlFor='Login__user_name'>
+                User name
+              </label>
+              <input
+                required
+                name='user_name'
+                id='Login__user_name'>
+              </input>
+            </div>
+            <div className='Login__password-div'>
+              <label htmlFor='Login__password'>
+                Password
+              </label>
+              <input
+                required
+                name='password'
+                type='password'
+                id='Login__password'>
+              </input>
+            </div>
+            <div className='Login__submit-button-div'>
+              <button className='Login__submit-button' type='submit'>
+                Login
+              </button>
+              <p className='Login__or'>or</p>
+              <Link className='Login__register-link' to='/register'>sign up</Link>
+            </div>
+          </form>
+        </section>
+      </main>
     )
   }
 
-  componentWillUnmount() {
-    const element = document.getElementById('App');
-    element.classList.toggle('Login__App-flex');
-  }
+  // componentWillUnmount() {
+  //   const element = document.getElementById('Login__main-flex');
+  //   element.classList.toggle('Login__main-flex');
+  // }
 }
 

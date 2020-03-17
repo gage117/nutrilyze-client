@@ -22,20 +22,29 @@ export default class Header extends Component {
   }
 
   renderLoginLink() {
-    return (
-      <div className='Header__not-logged-in'>
-        <Link
-          className='Header__login-button Header__button'
-          to='/login'>
-          Login
-        </Link>
-        <Link
-          className='Header__register-button Header__button'
-          to='/register'>
-          Register
-        </Link>
-      </div>
-    )
+    /** Checks if the path is on register or login page.
+     * If so: it doesn't render the login and register buttons */
+    if (this.props.path === '/register' || this.props.path === '/login') {
+      return (
+        <div className='Header__not-logged-in'>
+        </div>
+      )
+    } else {
+      return (
+        <div className='Header__not-logged-in'>
+          <Link
+            className='Header__login-button Header__button'
+            to='/login'>
+            Login
+          </Link>
+          <Link
+            className='Header__register-button Header__button'
+            to='/register'>
+            Register
+          </Link>
+        </div>
+      )
+    }
   }
 
   render() {

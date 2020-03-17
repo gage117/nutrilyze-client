@@ -1,3 +1,8 @@
+#mp__main {
+  padding: 2rem 0;
+  color: whitesmoke;
+}
+
 .nutrition-input {
   display: flex;
   flex-wrap: wrap;
