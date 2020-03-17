@@ -83,62 +83,66 @@ class ServingForm extends Component {
   render() {
     return (
       <form className='serving-form' onSubmit={this.handleSubmitForm} autoComplete='off'>
-        <label htmlFor='name' className='label block'>
-          <span>Name: </span>
-          <div className='autocomplete'>
-            <input id='name' className='text-input' name='name' type='text' placeholder='Broccoli' required />
-          </div>
-        </label>
-        <label htmlFor='calories' className='label block'>
-          <span>Calories: </span>
-          <input id='calories' className='text-input' name='calories' type='text' placeholder='340' required />
-        </label>
-        <label htmlFor='protein' className='label block'>
-          <span>Protein: </span>
-          <input id='protein' type='text' className='text-input' name='protein' placeholder='12g' required />
-        </label>
-        <label htmlFor='carbs' className='label block'>
-          <span>Carbs: </span>
-          <input id='carbs' type='text' className='text-input' name='carbs' placeholder='17g' required />
-        </label>
-        <label htmlFor='sugar' className='label block'>
-          <span>Sugar: </span>
-          <input id='sugar' type='text' className='text-input' name='sugar' placeholder='10g' required />
-        </label>
-        <label htmlFor='fiber' className='label block'>
-          <span>Fiber: </span>
-          <input id='fiber' type='text' className='text-input' name='fiber' placeholder='8g' required />
-        </label>
-        <label htmlFor='fat' className='label block'>
-          <span>Fat: </span>
-          <input id='fat' type='text' className='text-input' name='fat' placeholder='13g' required />
-        </label>
-        <label htmlFor='sodium' className='label block'>
-          <span>Sodium: </span>
-          <input id='sodium' type='text' className='text-input' name='sodium' placeholder='10mg' required />
-        </label>
-        <label htmlFor='serving-size' className='label block serving-size-label'>
-          <span className='block'>Serving Size: </span>
-          <input id='serving-size' type='text' className='text-input' name='serving-size' placeholder='2' />
-          <select id='unit-of-measure'>
-            <optgroup label='Weight'>
-              <option value='oz'>Ounces{'(oz)'}</option>
-              <option value='g'>Grams{'(g)'}</option>
-            </optgroup>
-            <optgroup label='Volume'>
-              <option value='cups'>Cups</option>
-              <option value='tspn'>Teaspoon{'(tspn)'}</option>
-              <option value='tblspn'>Tablespoon{'(tblspn)'}</option>
-            </optgroup>
-            <optgroup label='Other'>
-              <option value='container'>Container</option>
-            </optgroup>
-          </select>
-          <span className='serving-size-note'>Only required if "Store Item" is checked</span>
-        </label>
-        <div>
-          <button className='submit-button' type='submit'>Submit</button>
-          <label>
+        <h2 className='sf__h2'>Track Food</h2>
+        <p className='sf__p'>Add nutrition info of a food item to your current nutrition and/or store the item for later</p>
+        <div className='sf__input-container'>
+          <label htmlFor='name' className='sf__label'>
+            <span>Name: </span>
+            <div className='sf__autocomplete'>
+              <input id='name' className='sf__text-input' name='name' type='text' placeholder='Broccoli' required />
+            </div>
+          </label>
+          <label htmlFor='calories' className='sf__label'>
+            <span>Calories: </span>
+            <input id='calories' className='sf__input-small' name='calories' type='text' placeholder='340' required />
+          </label>
+          <label htmlFor='protein' className='sf__label'>
+            <span>Protein: </span>
+            <input id='protein' type='text' className='sf__input-small' name='protein' placeholder='12g' required />
+          </label>
+          <label htmlFor='carbs' className='sf__label'>
+            <span>Carbs: </span>
+            <input id='carbs' type='text' className='sf__input-small' name='carbs' placeholder='17g' required />
+          </label>
+          <label htmlFor='sugar' className='sf__label'>
+            <span>Sugar: </span>
+            <input id='sugar' type='text' className='sf__input-small' name='sugar' placeholder='10g' required />
+          </label>
+          <label htmlFor='fiber' className='sf__label'>
+            <span>Fiber: </span>
+            <input id='fiber' type='text' className='sf__input-small' name='fiber' placeholder='8g' required />
+          </label>
+          <label htmlFor='fat' className='sf__label'>
+            <span>Fat: </span>
+            <input id='fat' type='text' className='sf__input-small' name='fat' placeholder='13g' required />
+          </label>
+          <label htmlFor='sodium' className='sf__label'>
+            <span>Sodium: </span>
+            <input id='sodium' type='text' className='sf__input-small' name='sodium' placeholder='10mg' required />
+          </label>
+          <label htmlFor='serving-size' className='sf__label sf__block sf__serving-size-label'>
+            <span className='sf__block'>Serving Size: </span>
+            <input id='serving-size' type='text' className='sf__text-input' name='serving-size' placeholder='2' />
+            <select id='unit-of-measure'>
+              <optgroup label='Weight'>
+                <option value='oz'>Ounces{'(oz)'}</option>
+                <option value='g'>Grams{'(g)'}</option>
+              </optgroup>
+              <optgroup label='Volume'>
+                <option value='cups'>Cups</option>
+                <option value='tspn'>Teaspoon{'(tspn)'}</option>
+                <option value='tblspn'>Tablespoon{'(tblspn)'}</option>
+              </optgroup>
+              <optgroup label='Other'>
+                <option value='container'>Container</option>
+              </optgroup>
+            </select>
+            <span className='sf__serving-size-note'>Only required if "Store Item" is checked</span>
+          </label>
+        </div>
+        <div className='sf__submit-button-container'>
+          <button className='sf__submit-button' type='submit'>Submit</button>
+          <label className='sf__label sf__store-item-label'>
             <span htmlFor='store-item'>Store Item: </span> 
             <input id='store-item' name='store-item' type='checkbox' />
           </label>

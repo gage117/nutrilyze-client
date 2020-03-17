@@ -1,14 +1,25 @@
 #mp__main {
   padding: 2rem 0;
-  color: whitesmoke;
 }
 
 .nutrition-input {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
+  width: 29rem;
+  margin: auto;
 }
 
 .our-nutrition {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
+  width: 250px;
+  margin: auto;
+}
+
+@media screen and (min-width: 550px) {
+  .nutrition-input {
+    flex-direction: row;
+  }
 }
