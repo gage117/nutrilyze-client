@@ -1,18 +1,106 @@
-#login {
+/* Changes the App container to flex */
+#root > .Login__App-flex {
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #AAA;
 }
 
-.login-container {
-  color: #444;
+.Login__container {
+  padding: 1rem;
+  min-width: 25rem;
+  background-color: #27496d;
+  border-radius: .75rem;
+}
+
+.Login__container > h2 {
+  margin: 3rem 0rem 4rem;
+  font-size: 4rem;
   text-align: center;
-  line-height: 1.5;
+  color: whitesmoke;
 }
 
-.login-form {
-  background-color: #CCC;
-  padding: 10px 15px;
+/* ==User Name== */
+.Login__user_name-div {
+  width: 20rem;
+  margin: 2rem auto;
+}
+.Login__user_name-div > label {
+  display: block;
+  font-size: 2.2rem;
+  color: whitesmoke;
+  margin-bottom: .5rem;
+}
+#Login__user_name {
+  border-radius: .3rem;
+  width: 20rem;
+  height: 3rem;
+}
+
+/* ==Password== */
+.Login__password-div {
+  width: 20rem;
+  margin: 2rem auto;
+}
+.Login__password-div > label {
+  display: block;
+  font-size: 2.2rem;
+  color: whitesmoke;
+  margin-bottom: .5rem;
+}
+#Login__password {
+  border-radius: .3rem;
+  width: 20rem;
+  height: 3rem;
+}
+
+/* ==Login Button== */
+.Login__submit-button-div {
+  padding: .25rem 0;
+  margin: 2.5rem 0 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.Login__submit-button {
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 2.3rem;
+  padding: .5rem 1.25rem;
+  margin: .5rem .25rem;
+  border: 1px solid black;
+  border-radius: .3rem;
+  color: whitesmoke;
+  background-color: #0c7b93;
+}
+.Login__submit-button:hover {
+  text-decoration: underline;
+  background-color: #00a8cc;
+}
+
+.Login__or {
+  margin: .5rem 0;
+  font-size: 1.7rem;
+}
+
+/* ==Register Link== */
+.Login__register-link {
+  display: inline-block;
+  font-size: 2rem;
+  margin: 0 .25rem;
+  color: #40ceb8;
+}
+
+.Login__register-link:hover {
+  color: whitesmoke;
+}
+
+/* ==Error Element== */
+.Login__error {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: rgb(192, 0, 0);
 }

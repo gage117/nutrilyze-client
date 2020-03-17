@@ -1,11 +1,53 @@
-header {
+.Header {
   display: flex;
+  position: relative;
+  height: 3.75rem;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #27496d;
+  box-shadow: 0rem 0rem .5rem black;
 }
 
-.nav-list {
-  display: flex;
+/* ==BUTTONS== */
+/* --MAIN BUTTON-- */
+.Header__main-button {
+  text-decoration: none;
+  color: whitesmoke;
+  padding-left: .5rem;
+}
+/* --main button text-- */
+.Header__h1 {
+  margin: 0rem;
+  font-size: 2.5rem;
+}
+/* --LOGIN/REGISTER BUTTONS-- */
+.Header__not-logged-in {
+  padding-right: .5rem;
+}
+.Header__button {
+  text-decoration: none;
+  font-size: 1.8rem;
+  padding: .3rem .6rem;
+  margin: 0 .3rem;
+  border: 1px solid black;
+  border-radius: .3rem;
+  color: whitesmoke;
+  background-color: #0c7b93;
+}
+.Header__button:hover {
+  text-decoration: underline;
+  background-color: #00a8cc;
 }
 
-.list-item {
-  width: 50px;
+@media screen and (min-width: 550px) {
+  .Header {
+    height: 5rem;
+  }
+  .Header__h1 {
+    font-size: 3rem;
+  }
+  .Header__button {
+    font-size: 2.3rem;
+    margin: 0 .35rem;
+  }
 }

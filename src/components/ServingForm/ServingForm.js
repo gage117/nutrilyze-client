@@ -3,15 +3,16 @@ import './ServingForm.css'
 
 class ServingForm extends Component {
 
+  /** Multiple users */
   /** Returns the checkbox and label JSX of a user */
-  generateUserChoices = (user) => {
-    return (
-      <div key={user.id}>
-        <input type='checkbox' className='user-checkbox' id={user.name} name={user.name} />
-        <label htmlFor={user.name}>{user.name}</label>
-      </div>
-    )
-  }
+  // generateUserChoices = (user) => {
+  //   return (
+  //     <div key={user.id}>
+  //       <input type='checkbox' className='user-checkbox' id={user.name} name={user.name} />
+  //       <label htmlFor={user.name}>{user.name}</label>
+  //     </div>
+  //   )
+  // }
 
   handleSubmitForm = (event) => {
     event.preventDefault();
@@ -56,12 +57,12 @@ class ServingForm extends Component {
           const foodToStore = {
             name: event.target['name'].value,
             ...nutritionValues,
-            servingSize: event.target['serving-size'].value,
-            unitOfMeasure: event.target['unit-of-measure'].value
+            serving_size: event.target['serving-size'].value,
+            unit_of_measure: event.target['unit-of-measure'].value
           }
     
           this.props.handlers.storeFood(foodToStore)
-          this.props.handlers.updateUserNutrition(nutritionValues, usersToUpdate)  
+          this.props.handlers.updateUserNutrition(nutritionValues, usersToUpdate)
         }
         break;
       default:

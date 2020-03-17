@@ -1,28 +1,85 @@
 #landing-page {
-  color: #444;
+  color: whitesmoke;
   text-align: center;
   line-height: 1.5;
 }
 
-.lp-header {
-  padding: 15px 15px;
+.lp__header {
+  padding: 1.5rem;
 }
 
-.lp-section {
-  min-height: 200px;
-  padding: 30px 15px;
-  background-color: #bbb;
+.lp__header > h3 {
+  font-size: 2.5rem;
+  margin: 0;
 }
 
-.lp-section:nth-child(even) {
-  background-color: #ddd;
+.lp__footer {
+  font-size: 2rem;
+  margin: 0;
 }
 
-.lp-section > p {
+.lp__section {
+  min-height: 20rem;
+  padding: 3rem 1.5rem;
+  max-width: 71rem;
+  margin: auto;
+  background-color: #0c7b93;
+}
+
+.lp__section:nth-child(even) {
+  background-color: #27496d;
+}
+
+.lp__section > p {
   margin: 0 auto;
-  max-width: 650px;
+  max-width: 65rem;
+  font-size: 1.7rem;
 }
 
-.lp-section > p + p {
-  margin-top: 15px;
+.lp__section > p + p {
+  margin-top: 1.5rem;
+}
+
+.lp__link {
+  display: inline-block;
+  font-size: 1.9rem;
+  margin: .5rem .25rem;
+  color: #40ceb8;
+}
+
+.lp__link:hover {
+  color: whitesmoke;
+}
+
+.lp__button {
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1.9rem;
+  padding: .5rem .75rem;
+  margin: .5rem .25rem;
+  border: 1px solid black;
+  border-radius: .3rem;
+  color: whitesmoke;
+  background-color: #0c7b93;
+}
+.lp__button:hover {
+  text-decoration: underline;
+  background-color: #00a8cc;
+}
+
+/* adjust height for register section */
+#landing-page > .lp__last-section {
+  min-height: 9.2rem;
+  padding: 0rem 1.5rem;
+}
+
+@media screen and (min-width: 710px) {
+  #landing-page {
+    padding: 2rem 0rem 1rem 0rem;
+  }
+  .lp__section {
+    margin: 2rem auto;
+    border-radius: 1rem;
+  }
 }

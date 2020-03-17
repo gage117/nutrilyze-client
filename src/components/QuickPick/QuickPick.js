@@ -36,7 +36,7 @@ function QuickPick(props) {
     // }
     function getUnitOfMeasureByName(name) {
       const item = getItemByName(name)
-      return item.unitOfMeasure
+      return item.unit_of_measure
     }
     /** Multiple users, Apply-to Checkboxes JSX, add above serving size div */
     // <div className='apply-to-half'>
@@ -83,12 +83,12 @@ function QuickPick(props) {
     event.preventDefault()
     const item = getItemByName(event.target.getAttribute('class'))
     
-    let servingSize = item.servingSize;
-    if (isNaN(servingSize)) {
-      servingSize = servingSize.split('/')
-      servingSize = parseFloat(servingSize[0] / servingSize[1]).toFixed(2)
+    let serving_size = item.serving_size;
+    if (isNaN(serving_size)) {
+      serving_size = serving_size.split('/')
+      serving_size = parseFloat(serving_size[0] / serving_size[1]).toFixed(2)
     }
-    const multiplier = parseFloat(event.target[`${item.name}-serving`].value / Number(servingSize)).toFixed(2)
+    const multiplier = parseFloat(event.target[`${item.name}-serving`].value / Number(serving_size)).toFixed(2)
     
     const nutritionValues = {
       calories: parseFloat(item.calories * multiplier).toFixed(0),

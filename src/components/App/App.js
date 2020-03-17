@@ -1,21 +1,46 @@
 import React from 'react'
+import PrivateRoute from '../../Utils/PrivateRoute'
+import PublicOnlyRoute from '../../Utils/PublicOnlyRoute'
 import { Route, Switch } from 'react-router-dom'
 import MainPage from '../../routes/MainPage/MainPage'
 import LandingRoute from '../../routes/LandingRoute/LandingRoute'
 import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage'
 import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage'
 import './App.css'
-import LoginPage from '../../routes/LoginPage/LoginPage';
+import LoginPage from '../../routes/LoginPage/LoginPage'
+import authService from '../../services/auth-api-service'
 
 class App extends React.Component {
   constructor(props) {
     super(props)
   
     this.state = {
-       users: this.sortUsers(this.props.Store.users),
-       ingredients: this.sortIngredients(this.props.Store.ingredients),
-       meals: this.sortIngredients(this.props.Store.meals)
+       users: this.sortUsers([]),
+       ingredients: this.sortIngredients([]),
+       //meals: this.sortIngredients(this.props.Store.meals),
+       error: null
     }
+  }
+
+  updateIngsFromFetch = (ingredientsArr) => {
+    this.setState({
+      ingredients: ingredientsArr
+    })
+  }
+
+  updateUsersFromFetch = (user) => {
+    this.setState({
+      users: [user]
+    })
+  }
+
+  setError = error => {
+    console.error(error)
+    this.setState({ error })
+  }
+
+  clearError = () => {
+    this.setState({ error: null })
   }
 
   sortUsers = (array) => {
@@ -45,6 +70,7 @@ class App extends React.Component {
       const updatedUser = {
         id: user.id,
         name: user.name,
+        user_name: user.user_name,
         calories: parseFloat(user.calories) + parseFloat(nutritionValues.calories),
         protein: parseFloat(user.protein) + parseFloat(nutritionValues.protein),
         carbs: parseFloat(user.carbs) + parseFloat(nutritionValues.carbs),
@@ -53,6 +79,7 @@ class App extends React.Component {
         fat: parseFloat(user.fat) + parseFloat(nutritionValues.fat),
         sodium: parseFloat(user.sodium) + parseFloat(nutritionValues.sodium),
       }
+      authService.updateUser(updatedUser)
       updatedUsers.push(updatedUser)
       return this.sortUsers(updatedUsers)
     })
@@ -84,31 +111,40 @@ class App extends React.Component {
   render() { 
     const handlers = {
       updateUserNutrition: this.updateUserNutrition,
-      storeFood: this.storeFood
+      updateIngsFromFetch: this.updateIngsFromFetch,
+      updateUsersFromFetch: this.updateUsersFromFetch,
+      storeFood: this.storeFood,
+      setError: this.setError,
+      clearError: this.clearError
+
     }
     return (
-      <div className="App">
+      <div id="App">
         <Switch>
           <Route
             exact
             path='/'
             component={LandingRoute}
           />
-          <Route 
+          <PublicOnlyRoute 
             exact
             path='/login'
             component={LoginPage}
           />
-          <Route
+          <PublicOnlyRoute
             exact
             path='/register'
             component={RegistrationPage}
           />
-          <Route
+          <PrivateRoute
             path='/user/:username'
-            render={() => 
-              <MainPage state={this.state} handlers={handlers} />
+            component={ 
+              MainPage
             }
+            props={{
+              state: this.state,
+              handlers: handlers
+            }}
           />
           <Route
             component={NotFoundPage}

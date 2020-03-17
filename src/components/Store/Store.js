@@ -33,7 +33,7 @@ export default {
       fiber: 2.6,
       fat: 0.3,
       sodium: 0,
-      servingSize: '100',
+      serving_size: '100',
       unitOfMeasure: 'g'
     },
     {
@@ -45,7 +45,7 @@ export default {
       fiber: 2.4,
       fat: 0.4,
       sodium: 0,
-      servingSize: '1',
+      serving_size: '1',
       unitOfMeasure: 'cups'
     },
     {
@@ -57,7 +57,7 @@ export default {
       fiber: .2,
       fat: 0.04,
       sodium: 1,
-      servingSize: '1/3',
+      serving_size: '1/3',
       unitOfMeasure: 'cups'
     },
     {
@@ -69,7 +69,7 @@ export default {
       fiber: 2,
       fat: 1,
       sodium: 0,
-      servingSize: '2',
+      serving_size: '2',
       unitOfMeasure: 'oz'
     },
     {
@@ -81,7 +81,7 @@ export default {
       fiber: .2,
       fat: 0.04,
       sodium: 1,
-      servingSize: '1/3',
+      serving_size: '1/3',
       unitOfMeasure: 'cups'
     },
   ],
@@ -95,7 +95,7 @@ export default {
       fiber: .2,
       fat: 0.04,
       sodium: 1,
-      servingSize: '1/3',
+      serving_size: '1/3',
       unitOfMeasure: 'cups'
     },
     {
@@ -107,7 +107,7 @@ export default {
       fiber: .2,
       fat: 0.04,
       sodium: 1,
-      servingSize: '1/3',
+      serving_size: '1/3',
       unitOfMeasure: 'oz'
     },
     {
@@ -119,7 +119,7 @@ export default {
       fiber: .2,
       fat: 0.04,
       sodium: 1,
-      servingSize: '1/3',
+      serving_size: '1/3',
       unitOfMeasure: 'cups'
     },
   ]

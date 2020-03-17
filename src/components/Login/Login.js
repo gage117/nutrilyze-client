@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
+import {Link} from 'react-router-dom'
 import TokenService from '../../services/token-service'
 import AuthApiService from '../../services/auth-api-service'
+import './Login.css'
 
-export default class LoginForm extends Component {
+export default class Login extends Component {
   static defaultProps = {
     onLoginSuccess: () => {}
   }
@@ -19,52 +21,68 @@ export default class LoginForm extends Component {
       password: password.value
     })
       .then(res => {
-        user_name.value = ''
         password.value = ''
         TokenService.saveAuthToken(res.authToken)
-        this.props.onLoginSuccess()
+        this.props.onLoginSuccess(user_name.value)
+        user_name.value = ''
       })
       .catch(res => {
         this.setState({error: res.error})
       })
   }
 
+  componentDidMount() {
+    const element = document.getElementById('App');
+    element.classList.toggle('Login__App-flex');
+  }
+
   render() {
-    const { error } = this.state
     return (
-      <form
-        className='LoginForm'
-        onSubmit={this.handleSubmitJwtAuth}
-      >
-        <div role='alert'>
-          {error && <p className='red'>{error}</p>}
-        </div>
-        <div className='user_name'>
-          <label htmlFor='LoginForm__user_name'>
-            User name
-          </label>
-          <input
-            required
-            name='user_name'
-            id='LoginForm__user_name'>
-          </input>
-        </div>
-        <div className='password'>
-          <label htmlFor='LoginForm__password'>
-            Password
-          </label>
-          <input
-            required
-            name='password'
-            type='password'
-            id='LoginForm__password'>
-          </input>
-        </div>
-        <button type='submit'>
-          Login
-        </button>
-      </form>
+      <section className='Login__container'>
+        <h2>Login</h2>
+        <form
+          className='Login__form'
+          onSubmit={this.handleSubmitJwtAuth}
+        >
+          <div role='alert'>
+            {this.state.error && <p className='Login__error'>Something went wrong, please try again</p>}
+          </div>
+          <div className='Login__user_name-div'>
+            <label htmlFor='Login__user_name'>
+              User name
+            </label>
+            <input
+              required
+              name='user_name'
+              id='Login__user_name'>
+            </input>
+          </div>
+          <div className='Login__password-div'>
+            <label htmlFor='Login__password'>
+              Password
+            </label>
+            <input
+              required
+              name='password'
+              type='password'
+              id='Login__password'>
+            </input>
+          </div>
+          <div className='Login__submit-button-div'>
+            <button className='Login__submit-button' type='submit'>
+              Login
+            </button>
+            <p className='Login__or'>or</p>
+            <Link className='Login__register-link' to='/register'>sign up</Link>
+          </div>
+        </form>
+      </section>
     )
+  }
+
+  componentWillUnmount() {
+    const element = document.getElementById('App');
+    element.classList.toggle('Login__App-flex');
   }
 }
 

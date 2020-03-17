@@ -33,7 +33,7 @@ describe('App.js', () => {
         protein: 0,
         fat: 0,
         sodium: 0,
-        servingSize: 0
+        serving_size: 0
       }
     ]
   }

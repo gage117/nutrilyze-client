@@ -9,20 +9,20 @@ export default class LoginPage extends Component {
     },
   }
 
-  handleLoginSuccess = () => {
+  handleLoginSuccess = (user_name) => {
+    console.log('2nd', user_name)
     const { location, history } = this.props
-    const destination = (location.state || {}).from || '/'
+    const destination = (location.state || {}).from || `/user/${user_name}`
     history.push(destination)
   }
 
   render() {
     return (
-      <section className='LoginPage'>
-        <h2>Login</h2>
+      <React.Fragment>
         <Login
           onLoginSuccess={this.handleLoginSuccess}
         />
-      </section>
+      </React.Fragment>
     )
   }
 }
