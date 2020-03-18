@@ -1,0 +1,39 @@
+.user-nutrition {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.un__user-container {
+  background-color: #0c7b93;
+  border-radius: .75rem;
+  margin: 0 auto 1rem;
+  width: 29rem;
+}
+
+.un__h3 {
+  font-size: 3rem;
+  margin: 0;
+  padding: .5rem 0 .5rem 1rem;
+  color: #40ceb8;
+  background-color: #27496d;
+  border-radius: .75rem .75rem 0 0;
+}
+
+.un__h6 {
+  text-align: center;
+  font-size: 2.2rem;
+  padding: 1rem 0;
+  margin: 0 auto;
+}
+
+.un__p {
+  font-size: 1.8rem;
+  padding: .5rem 0;
+  margin: 0;
+}
+
+.un__split-container {
+  display: flex;
+  justify-content: space-around;
+}

@@ -13,15 +13,6 @@ describe('ServingForm', () => {
       protein: 20,
       fat: 30,
       sodium: 20
-    },
-    {
-      id: 2,
-      name: 'Alanna',
-      calories: 0,
-      carbs: 0,
-      protein: 0,
-      fat: 0,
-      sodium: 0
     }
   ]
   

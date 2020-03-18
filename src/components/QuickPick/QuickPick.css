@@ -1,13 +1,13 @@
 .quick-pick {
   width: 29rem;
-  height: 41.5rem;
+  height: 46rem;
   background-color: #0c7b93;
   border-radius: .75rem;
   margin: 0 0 2.5rem;
 }
 
 .qp__section {
-  height: 41.5rem;
+  height: 46rem;
 }
 
 /* Meals functionality */
@@ -33,7 +33,7 @@
 }
 
 #qp__ingredients-container {
-  height: 36rem;
+  height: 40.5rem;
   overflow: hidden;
   overflow-y: scroll;
 }
@@ -142,3 +142,9 @@
   padding: 2.5px 0px 2.5px 25px;
   font-size: 16px;
 } */
+
+@media screen and (min-width: 885px) {
+  .quick-pick {
+    margin: 0;
+  }
+}

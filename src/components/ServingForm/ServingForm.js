@@ -27,6 +27,7 @@ class ServingForm extends Component {
       fat: event.target['fat'].value,
       sodium: event.target['sodium'].value,
     }
+    
 
     /** Iterates over the users and checks if that user's checkbox is checked
      *  -if so: It adds it to the usersToUpdate array to be passed into the updateUserNutrition function
@@ -84,7 +85,9 @@ class ServingForm extends Component {
     return (
       <form className='serving-form' onSubmit={this.handleSubmitForm} autoComplete='off'>
         <h2 className='sf__h2'>Track Food</h2>
-        <p className='sf__p'>Add nutrition info of a food item to your current nutrition and/or store the item for later</p>
+        <div className='sf__p-container'>
+          <p className='sf__p'>Add nutrition info of a food item to your current nutrition and/or store the item for later</p>
+        </div>
         <div className='sf__input-container'>
           <label htmlFor='name' className='sf__label'>
             <span>Name: </span>

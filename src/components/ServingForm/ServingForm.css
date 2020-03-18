@@ -1,5 +1,6 @@
 .serving-form {
   width: 29rem;
+  height: 46rem;
   background-color: #0c7b93;
   border-radius: .75rem;
   margin: 0 0 2.5rem;
@@ -10,27 +11,32 @@
 }
 
 .sf__h2 {
-  width: 25rem;
-  padding: .25rem 0;
-  margin: 1.5rem 0 0;
-  text-align: center;
+  width: 29rem;
+  padding: .25rem 0 0 1rem;
+  margin: 0;
   font-size: 4rem;
   color: #40ceb8;
-  border-radius: .75rem;
+  border-radius: .75rem .75rem 0 0;
   background-color: #27496d;
 }
 
+.sf__p-container {
+  width: 29rem;
+  margin: 1rem;
+}
+
 .sf__p {
-  margin: 1rem 0;
-  font-size: 1.6rem;
-  width: 21rem;
+  margin: 0;
+  padding: 0 0 0 1rem;
+  font-size: 1.4rem;
+  width: 27rem;
   text-align: justify;
 }
 
 .sf__input-container {
   background-color: #27496d;
   padding: 1rem 1.75rem;
-  width: 23rem;
+  width: 24.5rem;
   border-radius: .75rem;
 }
 
@@ -136,4 +142,10 @@
 
 .sf__store-item-label > span {
   font-weight: normal;
+}
+
+@media screen and (min-width: 885px) {
+  .serving-form {
+    margin: 0;
+  }
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import PrivateRoute from '../../Utils/PrivateRoute'
 import PublicOnlyRoute from '../../Utils/PublicOnlyRoute'
-import { Route, Switch } from 'react-router-dom'
+import {BrowserRouter, Route, Switch } from 'react-router-dom'
 import MainPage from '../../routes/MainPage/MainPage'
 import LandingRoute from '../../routes/LandingRoute/LandingRoute'
 import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage'
@@ -24,7 +24,7 @@ class App extends React.Component {
 
   updateIngsFromFetch = (ingredientsArr) => {
     this.setState({
-      ingredients: ingredientsArr
+      ingredients: this.sortIngredients(ingredientsArr)
     })
   }
 
@@ -71,13 +71,13 @@ class App extends React.Component {
         id: user.id,
         name: user.name,
         user_name: user.user_name,
-        calories: parseFloat(user.calories) + parseFloat(nutritionValues.calories),
-        protein: parseFloat(user.protein) + parseFloat(nutritionValues.protein),
-        carbs: parseFloat(user.carbs) + parseFloat(nutritionValues.carbs),
-        sugar: parseFloat(user.sugar) + parseFloat(nutritionValues.sugar),
-        fiber: parseFloat(user.fiber) + parseFloat(nutritionValues.fiber),
-        fat: parseFloat(user.fat) + parseFloat(nutritionValues.fat),
-        sodium: parseFloat(user.sodium) + parseFloat(nutritionValues.sodium),
+        calories: parseInt(user.calories) + parseInt(nutritionValues.calories),
+        protein: parseFloat(parseFloat(user.protein) + parseFloat(nutritionValues.protein)).toFixed(2),
+        carbs: parseFloat(parseFloat(user.carbs) + parseFloat(nutritionValues.carbs)).toFixed(2),
+        sugar: parseFloat(parseFloat(user.sugar) + parseFloat(nutritionValues.sugar)).toFixed(2),
+        fiber: parseFloat(parseFloat(user.fiber) + parseFloat(nutritionValues.fiber)).toFixed(2),
+        fat: parseFloat(parseFloat(user.fat) + parseFloat(nutritionValues.fat)).toFixed(2),
+        sodium: parseInt(user.sodium) + parseInt(nutritionValues.sodium),
       }
       authService.updateUser(updatedUser)
       updatedUsers.push(updatedUser)
@@ -120,36 +120,38 @@ class App extends React.Component {
     }
     return (
       <div id="App">
-        <Switch>
-          <Route
-            exact
-            path='/'
-            component={LandingRoute}
-          />
-          <PublicOnlyRoute 
-            exact
-            path='/login'
-            component={LoginPage}
-          />
-          <PublicOnlyRoute
-            exact
-            path='/register'
-            component={RegistrationPage}
-          />
-          <PrivateRoute
-            path='/user/:username'
-            component={ 
-              MainPage
-            }
-            props={{
-              state: this.state,
-              handlers: handlers
-            }}
-          />
-          <Route
-            component={NotFoundPage}
-          />
-        </Switch>
+        <BrowserRouter>
+          <Switch>
+            <Route
+              exact
+              path='/'
+              component={LandingRoute}
+            />
+            <PublicOnlyRoute 
+              exact
+              path='/login'
+              component={LoginPage}
+            />
+            <PublicOnlyRoute
+              exact
+              path='/register'
+              component={RegistrationPage}
+            />
+            <PrivateRoute
+              path='/user/:username'
+              component={ 
+                MainPage
+              }
+              props={{
+                state: this.state,
+                handlers: handlers
+              }}
+            />
+            <Route
+              component={NotFoundPage}
+            />
+          </Switch>
+        </BrowserRouter>
       </div>
     )
   }

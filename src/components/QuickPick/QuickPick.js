@@ -81,7 +81,8 @@ function QuickPick(props) {
   /** Button handlers */
   function handleApplyClick(event) {
     event.preventDefault()
-    const item = getItemByName(event.target.getAttribute('class'))
+    console.log(event.target)
+    const item = getItemByName(event.target.getAttribute('class').split(' ')[0])
     
     let serving_size = item.serving_size;
     if (isNaN(serving_size)) {
