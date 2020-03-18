@@ -1,0 +1,136 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`QuickPick renders the UI as exptected 1`] = `
+<div
+  className="quick-pick"
+>
+  <section
+    className="qp__section qp__ingredients"
+  >
+    <h2
+      className="qp__ingredients-header qp__h2"
+    >
+      Ingredients
+    </h2>
+    <div
+      id="qp__ingredients-container"
+    >
+      <div
+        className="list-div"
+      >
+        <div
+          className="qp__ingredient-bar qp__border-bottom"
+          id="Banana"
+        >
+          <span>
+            Banana
+          </span>
+          <button
+            className="Banana qp__add-button"
+            id="Banana-button"
+            onClick={[Function]}
+          >
+            Add
+          </button>
+        </div>
+        <div
+          className="qp__hidden expand-div qp__border-bottom"
+          id="Banana-hidden"
+        />
+      </div>
+      <div
+        className="list-div"
+      >
+        <div
+          className="qp__ingredient-bar qp__border-bottom"
+          id="Broccoli"
+        >
+          <span>
+            Broccoli
+          </span>
+          <button
+            className="Broccoli qp__add-button"
+            id="Broccoli-button"
+            onClick={[Function]}
+          >
+            Add
+          </button>
+        </div>
+        <div
+          className="qp__hidden expand-div qp__border-bottom"
+          id="Broccoli-hidden"
+        />
+      </div>
+      <div
+        className="list-div"
+      >
+        <div
+          className="qp__ingredient-bar qp__border-bottom"
+          id="White Rice"
+        >
+          <span>
+            White Rice
+          </span>
+          <button
+            className="White Rice qp__add-button"
+            id="White Rice-button"
+            onClick={[Function]}
+          >
+            Add
+          </button>
+        </div>
+        <div
+          className="qp__hidden expand-div qp__border-bottom"
+          id="White Rice-hidden"
+        />
+      </div>
+      <div
+        className="list-div"
+      >
+        <div
+          className="qp__ingredient-bar qp__border-bottom"
+          id="Spaghetti Noodles"
+        >
+          <span>
+            Spaghetti Noodles
+          </span>
+          <button
+            className="Spaghetti Noodles qp__add-button"
+            id="Spaghetti Noodles-button"
+            onClick={[Function]}
+          >
+            Add
+          </button>
+        </div>
+        <div
+          className="qp__hidden expand-div qp__border-bottom"
+          id="Spaghetti Noodles-hidden"
+        />
+      </div>
+      <div
+        className="list-div"
+      >
+        <div
+          className="qp__ingredient-bar qp__border-bottom"
+          id="Classico Pasta Sauce"
+        >
+          <span>
+            Classico Pasta Sauce
+          </span>
+          <button
+            className="Classico Pasta Sauce qp__add-button"
+            id="Classico Pasta Sauce-button"
+            onClick={[Function]}
+          >
+            Add
+          </button>
+        </div>
+        <div
+          className="qp__hidden expand-div qp__border-bottom"
+          id="Classico Pasta Sauce-hidden"
+        />
+      </div>
+    </div>
+  </section>
+</div>
+`;

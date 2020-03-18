@@ -33,8 +33,6 @@ export default class Register extends Component {
   }
 
   componentDidMount() {
-    const element = document.getElementById('Register__main-flex');
-    element.classList.toggle('Register__main-flex');
   }
 
   render() {
@@ -97,7 +95,5 @@ export default class Register extends Component {
   }
 
   componentWillUnmount() {
-    const element = document.getElementById('Register__main-flex');
-    element.classList.toggle('Register__main-flex');
   }
 }

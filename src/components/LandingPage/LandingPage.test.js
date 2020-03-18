@@ -1,23 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import renderer from 'react-test-renderer';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import renderer from 'react-test-renderer'
 import {BrowserRouter} from 'react-router-dom'
-import App from './App';
+import LandingPage from './LandingPage'
 
-describe('App.js', () => {
+describe('LandingPage', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div')
     ReactDOM.render(
       <BrowserRouter>
-        <App />
+        <LandingPage />
       </BrowserRouter>, div)
     ReactDOM.unmountComponentAtNode(div)
   })
-  it('renders the UI as expected', () => {
+  it('renders the UI as exptected', () => {
     const tree = renderer
       .create(
         <BrowserRouter>
-          <App />
+          <LandingPage />
         </BrowserRouter>
       )
       .toJSON()

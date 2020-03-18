@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Register renders the UI as exptected 1`] = `
+<main
+  id="Register__main-flex"
+>
+  <section
+    className="Register__container"
+  >
+    <h2>
+      Register
+    </h2>
+    <form
+      className="Register__form"
+      onSubmit={[Function]}
+    >
+      <div
+        role="alert"
+      />
+      <div
+        className="Register__user_name-div"
+      >
+        <label
+          htmlFor="Register__user_name"
+        >
+          User name
+        </label>
+        <input
+          id="Register__user_name"
+          name="user_name"
+          required={true}
+          type="text"
+        />
+      </div>
+      <div
+        className="Register__password-div"
+      >
+        <label
+          htmlFor="Register__password"
+        >
+          Password
+        </label>
+        <input
+          id="Register__password"
+          name="password"
+          required={true}
+          type="password"
+        />
+      </div>
+      <div
+        className="Register__name-div"
+      >
+        <label
+          htmlFor="Register__name"
+        >
+          Name
+        </label>
+        <input
+          id="Register__name"
+          name="name"
+          required={true}
+          type="text"
+        />
+      </div>
+      <div
+        className="Register__submit-button-div"
+      >
+        <button
+          className="Register__submit-button"
+          type="submit"
+        >
+          Register
+        </button>
+        <p
+          className="Register__or"
+        >
+          or
+        </p>
+        <a
+          className="Register__login-link"
+          href="/login"
+          onClick={[Function]}
+        >
+          login
+        </a>
+      </div>
+    </form>
+  </section>
+</main>
+`;

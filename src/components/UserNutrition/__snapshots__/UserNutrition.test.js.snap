@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserNutrition renders the UI as exptected 1`] = `
+<div
+  className="user-nutrition"
+>
+  <div
+    className="un__user-container"
+  >
+    <h3
+      className="un__h3"
+    >
+      Gage
+    </h3>
+    <h6
+      className="un__h6"
+    >
+      Calories: 
+      666
+    </h6>
+    <div
+      className="un__split-container"
+    >
+      <section
+        className="un__half"
+      >
+        <p
+          className="un__p"
+        >
+          Protein: 
+          20
+          g
+        </p>
+        <p
+          className="un__p"
+        >
+          Carbs: 
+          40
+          g
+        </p>
+        <p
+          className="un__p"
+        >
+          Sugar: 
+          20
+          g
+        </p>
+      </section>
+      <section
+        className="un__half"
+      >
+        <p
+          className="un__p"
+        >
+          Fiber: 
+          10
+          g
+        </p>
+        <p
+          className="un__p"
+        >
+          Fat: 
+          30
+          g
+        </p>
+        <p
+          className="un__p"
+        >
+          Sodium: 
+          20
+          mg
+        </p>
+      </section>
+    </div>
+  </div>
+</div>
+`;

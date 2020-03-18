@@ -1,15 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import renderer from 'react-test-renderer';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import renderer from 'react-test-renderer'
 import {BrowserRouter} from 'react-router-dom'
-import App from './App';
+import Header from './Header'
 
-describe('App.js', () => {
+describe('Header', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div')
     ReactDOM.render(
       <BrowserRouter>
-        <App />
+        <Header />
       </BrowserRouter>, div)
     ReactDOM.unmountComponentAtNode(div)
   })
@@ -17,7 +17,7 @@ describe('App.js', () => {
     const tree = renderer
       .create(
         <BrowserRouter>
-          <App />
+          <Header />
         </BrowserRouter>
       )
       .toJSON()

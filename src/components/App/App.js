@@ -1,7 +1,7 @@
 import React from 'react'
 import PrivateRoute from '../../Utils/PrivateRoute'
 import PublicOnlyRoute from '../../Utils/PublicOnlyRoute'
-import {BrowserRouter, Route, Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import MainPage from '../../routes/MainPage/MainPage'
 import LandingRoute from '../../routes/LandingRoute/LandingRoute'
 import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage'
@@ -120,38 +120,36 @@ class App extends React.Component {
     }
     return (
       <div id="App">
-        <BrowserRouter>
-          <Switch>
-            <Route
-              exact
-              path='/'
-              component={LandingRoute}
-            />
-            <PublicOnlyRoute 
-              exact
-              path='/login'
-              component={LoginPage}
-            />
-            <PublicOnlyRoute
-              exact
-              path='/register'
-              component={RegistrationPage}
-            />
-            <PrivateRoute
-              path='/user/:username'
-              component={ 
-                MainPage
-              }
-              props={{
-                state: this.state,
-                handlers: handlers
-              }}
-            />
-            <Route
-              component={NotFoundPage}
-            />
-          </Switch>
-        </BrowserRouter>
+        <Switch>
+          <Route
+            exact
+            path='/'
+            component={LandingRoute}
+          />
+          <PublicOnlyRoute 
+            exact
+            path='/login'
+            component={LoginPage}
+          />
+          <PublicOnlyRoute
+            exact
+            path='/register'
+            component={RegistrationPage}
+          />
+          <PrivateRoute
+            path='/user/:username'
+            component={ 
+              MainPage
+            }
+            props={{
+              state: this.state,
+              handlers: handlers
+            }}
+          />
+          <Route
+            component={NotFoundPage}
+          />
+        </Switch>
       </div>
     )
   }
