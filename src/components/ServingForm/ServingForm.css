@@ -2,7 +2,7 @@
   width: 29rem;
   background-color: #0c7b93;
   border-radius: .75rem;
-  margin: 0 0 1rem 0;
+  margin: 0 0 2.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -112,10 +112,15 @@
   font-size: 1.8rem;
   padding: .3rem .6rem;
   margin: 0 .3rem;
-  border: 1px solid black;
+  border: 1px solid #142850;
   border-radius: .3rem;
   color: whitesmoke;
   background-color: #142850;
+}
+
+.sf__submit-button:hover {
+  cursor: pointer;
+  background-color: #40ceb8;
 }
 
 .sf__store-item-label {

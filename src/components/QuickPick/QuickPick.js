@@ -7,9 +7,11 @@ function QuickPick(props) {
   function generateIngredient(ingredient, index) {
     return (
       <div key={index} className='list-div'>
-        <span>{ingredient.name}</span>
-        <button className={ingredient.name} onClick={handleAddClick}>Add</button>
-        <div id={ingredient.name} className='hidden expand-div'></div>
+        <div id={ingredient.name} className='qp__ingredient-bar qp__border-bottom'>
+          <span>{ingredient.name}</span>
+          <button id={`${ingredient.name}-button`} className={`${ingredient.name} qp__add-button`} onClick={handleAddClick}>Add</button>
+        </div>
+        <div id={`${ingredient.name}-hidden`} className='qp__hidden expand-div qp__border-bottom'></div>
       </div>
     )
   }
@@ -44,15 +46,13 @@ function QuickPick(props) {
     //   {props.state.users.map(user => generateUserChoices(user))}
     // </div>
     return (
-      <form onSubmit={handleApplyClick} className={item}>
-        <div className='serving-size-half'>
-          <label>
-            <span className='block'>Serving:</span>
-            <input type='text' id={`${item}-serving`} className='serving-input' required />
-            <span>{getUnitOfMeasureByName(item)}</span>
-          </label>
-          <button>Apply</button>
-        </div>
+      <form onSubmit={handleApplyClick} className={`${item} qp__add-form`}>
+        <label className='qp__add-food-label'>
+          <span className='block'>Serving:</span>
+          <input type='text' id={`${item}-serving`} className='qp__serving-input' required />
+          <span>{getUnitOfMeasureByName(item)}</span>
+        </label>
+        <button className='qp__apply-button'>Apply</button>
       </form>
     )
   }
@@ -111,10 +111,11 @@ function QuickPick(props) {
     props.handlers.updateUserNutrition(nutritionValues, usersToUpdate)
   }
   function handleAddClick(event) {
-    const item = event.target.getAttribute('class')
+    const item = event.target.getAttribute('id').split('-')[0]
     const element = generateForm(item)
-    document.getElementById(item).classList.toggle('hidden')
-    ReactDOM.render(element, document.getElementById(item))
+    document.getElementById(`${item}-hidden`).classList.toggle('qp__hidden')
+    document.getElementById(item).classList.toggle('qp__border-bottom')
+    ReactDOM.render(element, document.getElementById(`${item}-hidden`))
   }
   /** Meal functionality */
   // function handleOrganizeMealClick() {
@@ -128,7 +129,7 @@ function QuickPick(props) {
   //   </div>
   //   <div className='list-div'>
   //     <span>Spaghetti {'(HARD CODED)'}</span>
-  //     <div className='ingredients-list'>
+  //     <div className='meal-ingredients-list'>
   //       <p>> Ingredients {'(HARD CODED)'}</p>
   //       <span>Spaghetti Noodles, Pasta Sauce</span>
   //     </div>
@@ -138,9 +139,11 @@ function QuickPick(props) {
 
   return (
     <div className='quick-pick'>
-      <section className='qp-section ingredients'>
-        <h3 className='ingredients-header qp-h3'>Ingredients</h3>
-        {props.state.ingredients.map((ingredient, index) => generateIngredient(ingredient, index))}
+      <section className='qp__section qp__ingredients'>
+        <h2 className='qp__ingredients-header qp__h2'>Ingredients</h2>
+        <div id='qp__ingredients-container'>
+          {props.state.ingredients.map((ingredient, index) => generateIngredient(ingredient, index))}
+        </div>
       </section>
     </div>
   )
