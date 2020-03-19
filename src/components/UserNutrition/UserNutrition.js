@@ -2,12 +2,17 @@ import React from 'react'
 import './UserNutrition.css'
 
 function UserNutrition(props) {
-
+  function handleDeleteClick() {
+    props.handlers.deleteUserNutrition(props.state.users[0])
+  }
 
   const users = props.state.users.map((user, index) => {
     return (
       <div className='un__user-container' key={index}>
-        <h3 className='un__h3'>{user.name}</h3>
+        <div className='un__header'>
+          <span className='un__header-text'>{user.name}</span>
+          <button className='un__clear-button' onClick={handleDeleteClick}>Clear</button>
+        </div>
         <h6 className='un__h6'>Calories: {user.calories}</h6>
         <div className='un__split-container'>
           <section className='un__half'>

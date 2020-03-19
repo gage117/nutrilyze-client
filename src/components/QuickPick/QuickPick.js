@@ -46,7 +46,7 @@ function QuickPick(props) {
     //   {props.state.users.map(user => generateUserChoices(user))}
     // </div>
     return (
-      <form onSubmit={handleApplyClick} className={`${item} qp__add-form`}>
+      <form onSubmit={handleApplyClick} id={`${item}-apply`} className={`qp__add-form`}>
         <label className='qp__add-food-label'>
           <span className='block'>Serving:</span>
           <input type='text' id={`${item}-serving`} className='qp__serving-input' required />
@@ -81,7 +81,7 @@ function QuickPick(props) {
   /** Button handlers */
   function handleApplyClick(event) {
     event.preventDefault()
-    const item = getItemByName(event.target.getAttribute('class').split(' ')[0])
+    const item = getItemByName(event.target.getAttribute('id').split('-')[0])
     
     let serving_size = item.serving_size;
     if (isNaN(serving_size)) {

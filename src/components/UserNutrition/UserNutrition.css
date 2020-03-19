@@ -11,13 +11,37 @@
   width: 29rem;
 }
 
-.un__h3 {
-  font-size: 3rem;
-  margin: 0;
+.un__header {
   padding: .5rem 0 .5rem 1rem;
-  color: #40ceb8;
   background-color: #27496d;
   border-radius: .75rem .75rem 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.un__header-text {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0;
+  color: #40ceb8;
+}
+
+.un__clear-button {
+  text-decoration: none;
+  height: 3rem;
+  font-size: 2.2rem;
+  padding: .3rem .6rem;
+  margin: 0 1rem;
+  border: 1px solid #142850;
+  border-radius: .3rem;
+  color: whitesmoke;
+  background-color: #142850;
+}
+
+.un__clear-button:hover {
+  cursor: pointer;
+  background-color: #40ceb8;
 }
 
 .un__h6 {

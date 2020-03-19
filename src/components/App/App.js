@@ -59,6 +59,23 @@ class App extends React.Component {
     }
     return array.sort(compare)
   }
+
+  deleteUserNutrition = (user) => {
+    const updatedUser = {
+      id: user.id,
+      name: user.name,
+      user_name: user.user_name,
+      calories: 0,
+      protein: 0,
+      carbs: 0,
+      sugar: 0,
+      fiber: 0,
+      fat: 0,
+      sodium: 0
+    }
+    authService.updateUser(updatedUser)
+    this.setState({users: [updatedUser]})
+  }
   
   updateUserNutrition = (nutritionValues, usersToUpdate) => {
     let updatedUsers = [];
@@ -72,11 +89,11 @@ class App extends React.Component {
         name: user.name,
         user_name: user.user_name,
         calories: parseInt(user.calories) + parseInt(nutritionValues.calories),
-        protein: parseFloat(parseFloat(user.protein) + parseFloat(nutritionValues.protein)).toFixed(2),
-        carbs: parseFloat(parseFloat(user.carbs) + parseFloat(nutritionValues.carbs)).toFixed(2),
-        sugar: parseFloat(parseFloat(user.sugar) + parseFloat(nutritionValues.sugar)).toFixed(2),
-        fiber: parseFloat(parseFloat(user.fiber) + parseFloat(nutritionValues.fiber)).toFixed(2),
-        fat: parseFloat(parseFloat(user.fat) + parseFloat(nutritionValues.fat)).toFixed(2),
+        protein: Number(parseFloat(parseFloat(user.protein) + parseFloat(nutritionValues.protein)).toFixed(2)),
+        carbs: Number(parseFloat(parseFloat(user.carbs) + parseFloat(nutritionValues.carbs)).toFixed(2)),
+        sugar: Number(parseFloat(parseFloat(user.sugar) + parseFloat(nutritionValues.sugar)).toFixed(2)),
+        fiber: Number(parseFloat(parseFloat(user.fiber) + parseFloat(nutritionValues.fiber)).toFixed(2)),
+        fat: Number(parseFloat(parseFloat(user.fat) + parseFloat(nutritionValues.fat)).toFixed(2)),
         sodium: parseInt(user.sodium) + parseInt(nutritionValues.sodium),
       }
       authService.updateUser(updatedUser)
@@ -113,6 +130,7 @@ class App extends React.Component {
       updateUserNutrition: this.updateUserNutrition,
       updateIngsFromFetch: this.updateIngsFromFetch,
       updateUsersFromFetch: this.updateUsersFromFetch,
+      deleteUserNutrition: this.deleteUserNutrition,
       storeFood: this.storeFood,
       setError: this.setError,
       clearError: this.clearError

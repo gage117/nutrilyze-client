@@ -31,11 +31,6 @@ export default class Login extends Component {
       })
   }
 
-  // componentDidMount() {
-  //   const element = document.getElementById('Login__main-flex');
-  //   element.classList.toggle('Login__main-flex');
-  // }
-
   render() {
     return (
       <main id='Login__main-flex'>
@@ -81,10 +76,5 @@ export default class Login extends Component {
       </main>
     )
   }
-
-  // componentWillUnmount() {
-  //   const element = document.getElementById('Login__main-flex');
-  //   element.classList.toggle('Login__main-flex');
-  // }
 }
 

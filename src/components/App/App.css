@@ -1,8 +1,7 @@
 #App {
-  background-color: #142850;
   color: whitesmoke;
   padding-top: 3.75rem;
-  min-height: 100vh;
+  min-height: 100%;
 }
 
 @media screen and (min-width: 550px) {

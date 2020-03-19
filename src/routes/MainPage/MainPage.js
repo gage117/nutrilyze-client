@@ -28,7 +28,7 @@ export default class MainPage extends Component {
         <main id='mp__main'>
           <ServingForm users={this.props.props.state.users} handlers={this.props.props.handlers}/>
           <QuickPick state={this.props.props.state} handlers={this.props.props.handlers}/>
-          <UserNutrition state={this.props.props.state} />
+          <UserNutrition state={this.props.props.state} handlers={this.props.props.handlers}/>
         </main>
       </React.Fragment>
     )

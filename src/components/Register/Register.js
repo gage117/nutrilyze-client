@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
+import TokenService from '../../services/token-service'
 import AuthService from '../../services/auth-api-service'
 import bcrypt from 'bcryptjs'
 import './Register.css'
@@ -14,7 +15,12 @@ export default class Register extends Component {
   handleSubmit = ev => {
     ev.preventDefault()
     const { name, user_name, password } = ev.target
-    bcrypt.hash(password.value, 10)
+    if (user_name.value.includes(' ')) {
+      this.setState({
+        error: 'User name cannot contain spaces'
+      })
+    } else {
+      bcrypt.hash(password.value, 10)
       .then(hashedPassword => {
         const user = {
           name: name.value,
@@ -24,12 +30,20 @@ export default class Register extends Component {
     
         AuthService.addUser(user)
           .then(() => {
-            name.value = ''
-            user_name.value = ''
-            password.value = ''
-            this.props.onRegistrationSuccess()
+            AuthService.postLogin({
+              user_name: user_name.value,
+              password: password.value
+            })
+              .then(res => {
+                password.value = ''
+                TokenService.saveAuthToken(res.authToken)
+                this.props.onRegistrationSuccess(user.user_name)
+                user_name.value = ''
+                name.value = ''
+              })
           })
       })
+    }
   }
 
   componentDidMount() {
