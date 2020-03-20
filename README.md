@@ -25,6 +25,68 @@ Track nutrition by inputting nutrition values for foods and even store them for 
 Be able to choose from your list of ingredients and easily apply the nutritional value based on the serving size.<br />
 ![](src/images/Quick-Pick.png)<br />
 
+## Tech Stack
+- React
+- React-router
+- bcrypt
+
+## Routes and Components
+The components for this application are inside the /src/components folder, and their corresponding routes in the /src/routes folder.
+
+#### Header Component
+This component is used in all routes, it is a basic nav component that renders a link to the landing page, a link to login, and one to register. If the user is logged in, the login and register buttons are replaced by a logout button
+
+### LandingRoute Route
+This route is the initial page from the root route (/) and list a description of the application along with screenshots.
+
+Components: Header, LandingPage
+#### LandingPage Component
+This component renders all of the landing page below the header. 
+
+### LoginPage Route
+Components: Header, Login
+#### Login Component
+Renders a Login form with username, password
+
+### RegisterPage Route
+Components: Header, Register
+#### Register Component
+Renders a Registration form with username, password, and name
+
+### MainPage Route
+Renders the components needed to make up the user's page. Including the Form for food tracking, the quick-pick store, and the user nutrition
+Components: Header, ServingForm, QuickPick, UserNutrition
+#### ServingForm Component
+Renders a form that asks the user for details on a food to apply as well as a checkbox to tick if you'd like to store the item. Details include:
+Name
+Calories
+Protein
+Carbs
+Sugar
+Fiber
+Fat
+Sodium
+Serving Size (If store-item is checked)
+
+All values except name must be numbers
+
+#### QuickPick Component
+Renders items from database into a store that can be used to easily pull and apply items to user nutrition
+Serving-size input must be a number
+
+#### UserNutrition Component
+Renders the users nutrition info into a table, with a button to clear the user's nutrition info if desired.
+
+### NotFound Route
+Renders a not found page
+
+## Running the Application
+- Clone Repo
+- Install dependencies with 'npm install'
+- Run tests with 'npm test'
+- Start the program with 'npm start'
+- This client is meant to be paired with the [Nutrilyze API Server](https://github.com/gage117/nutrilyze-server-api). Without the server running, the app will not be able to make any HTTP requests to login or register. Download the Nutrilyze API and follow it's README instructions to set up a working server to pair with this client.
+
 ## Available Scripts
 
 In the project directory, you can run:
