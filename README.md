@@ -1,5 +1,18 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Nutrilyze Client
+
+Live Version: https://nutrilyze-client.now.sh/
+[Github](https://github.com/gage117/nutrilyze-client)
+
+React Client for tracking a user's calories and nutrition intake (carbs, protein, sodium, etc.) and be able to store foods to re-add later.
+
+Interfaces with the Nutrilyze API [Github](https://github.com/gage117/nutrilyze-server-api)
+
+## Screenshots
+
+![](src/images/Quick-Pick.png)
+
 ## Available Scripts
 
 In the project directory, you can run:
