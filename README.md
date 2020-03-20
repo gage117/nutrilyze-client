@@ -3,22 +3,27 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 # Nutrilyze Client
 
 Live Version: https://nutrilyze-client.now.sh/
+
 [Github](https://github.com/gage117/nutrilyze-client)
 
+## Summary
 React Client for tracking a user's calories and nutrition intake (carbs, protein, sodium, etc.) and be able to store foods to re-add later.
 
 Interfaces with the Nutrilyze API [Github](https://github.com/gage117/nutrilyze-server-api)
 
 ## Screenshots
 
-![](src/images/User-Nutrition.png)
-Keep track of and clear user nutrition easily.
+### Current Nutrition Info
+Keep track of and clear user nutrition easily.<br />
+![](src/images/User-Nutrition.png)<br />
 
-![](src/images/Serving-Form.png)
-Track nutrition by inputting nutrition values for foods and even store them for later use.
+### Tracking Form
+Track nutrition by inputting nutrition values for foods and even store them for later use.<br />
+![](src/images/Serving-Form.png)<br />
 
-![](src/images/Quick-Pick.png)
-Be able to choose from your list of ingredients and easily apply the nutritional value based on the serving size.
+### Quick Pick Store
+Be able to choose from your list of ingredients and easily apply the nutritional value based on the serving size.<br />
+![](src/images/Quick-Pick.png)<br />
 
 ## Available Scripts
 
