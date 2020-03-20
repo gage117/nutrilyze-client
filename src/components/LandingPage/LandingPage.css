@@ -31,9 +31,9 @@
 }
 
 .lp__section > p {
-  margin: 0 auto;
+  margin: 1.5rem auto 0;
   max-width: 65rem;
-  font-size: 1.7rem;
+  font-size: 2rem;
 }
 
 .lp__section > p + p {

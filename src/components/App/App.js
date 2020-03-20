@@ -156,9 +156,7 @@ class App extends React.Component {
           />
           <PrivateRoute
             path='/user/:username'
-            component={ 
-              MainPage
-            }
+            component={MainPage}
             props={{
               state: this.state,
               handlers: handlers
