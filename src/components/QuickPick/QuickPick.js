@@ -84,12 +84,13 @@ function QuickPick(props) {
     const item = getItemByName(event.target.getAttribute('id').split('-')[0])
     
     let serving_size = item.serving_size;
-    if (isNaN(serving_size)) {
-      serving_size = serving_size.split('/')
-      serving_size = parseFloat(parseInt(serving_size[0]) / parseInt(serving_size[1])).toFixed(2)
+    let inputServing = event.target[`${item.name}-serving`].value
+    if (isNaN(inputServing)) {
+      inputServing = inputServing.split('/')
+      inputServing = parseFloat(parseInt(inputServing[0]) / parseInt(inputServing[1])).toFixed(2)
     }
-    console.log(serving_size)
-    const multiplier = parseFloat(event.target[`${item.name}-serving`].value / Number(serving_size)).toFixed(2)
+    console.log(inputServing)
+    const multiplier = parseFloat(inputServing / Number(serving_size)).toFixed(2)
     
     if (isNaN(multiplier)) {
       alert('Serving size must be a number or a fraction (1/3)')
