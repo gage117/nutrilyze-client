@@ -89,6 +89,8 @@ class QuickPick extends Component {
       serving_size = parseFloat(serving_size[0] / serving_size[1]).toFixed(2)
     }
     const multiplier = parseFloat(event.target[`${item.name}-serving`].value / Number(serving_size)).toFixed(2)
+
+    console.log(multiplier)
     
     const nutritionValues = {
       calories: parseFloat(item.calories * multiplier).toFixed(0),
