@@ -29,6 +29,7 @@ class ServingForm extends Component {
       fiber: event.target['fiber'].value,
       fat: event.target['fat'].value,
       sodium: event.target['sodium'].value,
+      serving_size: event.target['serving-size'].value
     }
 
     /** Iterates over the users and checks if that user's checkbox is checked
@@ -49,7 +50,7 @@ class ServingForm extends Component {
     for (let [key, value] of Object.entries(nutritionValues)) {
       if (isNaN(Number(value))) {
         const updatedValues = valueNaN.values
-        updatedValues.push(key)
+        updatedValues.push(key.split('_').join(' '))
         valueNaN = {
           values: updatedValues,
           isNumber: false
