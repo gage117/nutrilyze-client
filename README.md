@@ -11,7 +11,14 @@ Interfaces with the Nutrilyze API [Github](https://github.com/gage117/nutrilyze-
 
 ## Screenshots
 
+![](src/images/User-Nutrition.png)
+Keep track of and clear user nutrition easily.
+
+![](src/images/Serving-Form.png)
+Track nutrition by inputting nutrition values for foods and even store them for later use.
+
 ![](src/images/Quick-Pick.png)
+Be able to choose from your list of ingredients and easily apply the nutritional value based on the serving size.
 
 ## Available Scripts
 
