@@ -89,7 +89,6 @@ function QuickPick(props) {
       inputServing = inputServing.split('/')
       inputServing = parseFloat(parseInt(inputServing[0]) / parseInt(inputServing[1])).toFixed(2)
     }
-    console.log(inputServing)
     const multiplier = parseFloat(inputServing / Number(serving_size)).toFixed(2)
     
     if (isNaN(multiplier)) {
