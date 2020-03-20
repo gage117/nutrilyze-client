@@ -86,7 +86,7 @@ function QuickPick(props) {
     let serving_size = item.serving_size;
     if (isNaN(serving_size)) {
       serving_size = serving_size.split('/')
-      serving_size = parseFloat(serving_size[0] / serving_size[1]).toFixed(2)
+      serving_size = parseFloat(parseInt(serving_size[0]) / parseInt(serving_size[1])).toFixed(2)
     }
     const multiplier = parseFloat(event.target[`${item.name}-serving`].value / Number(serving_size)).toFixed(2)
     
