@@ -88,7 +88,8 @@ function QuickPick(props) {
       serving_size = serving_size.split('/')
       serving_size = parseFloat(parseInt(serving_size[0]) / parseInt(serving_size[1])).toFixed(2)
     }
-    const multiplier = Number(parseFloat(event.target[`${item.name}-serving`].value / Number(serving_size)).toFixed(2))
+    console.log(serving_size)
+    const multiplier = parseFloat(event.target[`${item.name}-serving`].value / Number(serving_size)).toFixed(2)
     
     if (isNaN(multiplier)) {
       alert('Serving size must be a number or a fraction (1/3)')
